@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AzCofe Menüsü</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .category {
+            flex: 1 1 300px;
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .category:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .menu-item {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background-color: #f8f8f8;
+        }
+
+        .details {
+            display: none;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .close-btn {
+            text-align: right;
+            cursor: pointer;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .welcome-text {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 24px;
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 80%; /* Genişlik ayarı */
+            max-width: 600px; /* Maksimum genişlik ayarı */
+        }
+
+        .modal-content {
+            padding: 20px;
+        }
+
+        .modal-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .modal-content li {
+            padding: 10px 0;
+        }
+
+        .welcome-text {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 24px;
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AzCofe Menüsü</h1>
+    </header>
+
+    <div class="welcome-text">
+        Welcome to AzCofe
+    </div>
+
+    <section>
+        <div class="category">
+            <h2>Isti Yemekler</h2>
+            <div class="menu-item" onclick="showModal('IstiYemek1-details')">
+                <span>Sulu Yemekler</span>
+            </div>
+            <div class="menu-item" onclick="showModal('IstiYemek2-details')">
+                <span>Icgiler</span>
+            </div>
+            <div class="menu-item" onclick="showModal('IstiYemek3-details')">
+                <span>Seher Yemekleri</span>
+            </div>
+            <div class="menu-item" onclick="showModal('IstiYemek4-details')">
+                <span>Quru Yemekler</span>
+            </div>
+            <!-- Modal for IstiYemek1 -->
+            <div class="modal" id="IstiYemek1-details">
+                <div class="close-btn" onclick="hideModal('IstiYemek1-details')">X</div>
+                <div class="modal-content">
+                    <ul>
+                        <li>Yemek_____________________10 AZN</li>
+                        <li>Yemek_____________________21 AZN</li>
+                        <li>Yemek_____________________22 AZN</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Modal for IstiYemek2 -->
+            <div class="modal" id="IstiYemek2-details">
+                <div class="close-btn" onclick="hideModal('IstiYemek2-details')">X</div>
+                <div class="modal-content">
+                    <ul>
+                        <li>icgi_____________________22 AZN</li>
+                        <li>icgi_____________________23 AZN</li>
+                        <li>icgi_____________________33 AZN</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Modal for IstiYemek3 -->
+            <div class="modal" id="IstiYemek3-details">
+                <div class="close-btn" onclick="hideModal('IstiYemek3-details')">X</div>
+                <div class="modal-content">
+                    <ul>
+                        <li>Yemek___________________22 AZN</li>
+                        <li>Yemek___________________44 AZN</li>
+                        <li>Yemek___________________11 AZN</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Modal for IstiYemek4 -->
+            <div class="modal" id="IstiYemek4-details">
+                <div class="close-btn" onclick="hideModal('IstiYemek4-details')">X</div>
+                <div class="modal-content">
+                    <ul>
+                        <li>Yemek___________________44 AZN</li>
+                        <li>Yemek___________________22 AZN</li>
+                        <li>Yemek___________________21 AZN</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.style.display = 'block';
+            }
+        }
+
+        function hideModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
